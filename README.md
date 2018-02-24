@@ -11,3 +11,6 @@ Hexadecimal is also known as base 16 since it is a numeric system which contains
 
 # Planck Constant
 Planck Constant is used as a foundational concept in quantum mechanics since it is the quantum of action in a phsyical constant. Max Planck developed this concept along with many others that resulted in him winning the Nobel Prize in 1918. 
+
+# Decimal to Binary Calculator
+Binary is a two base number system which is the simplest numeric system. Each digit represents a bit, which is why it is preferred by many computer engineers. Binary has a rich history that affected minds such as the philosopher Francis Bacon to the mathematician George Boole.
