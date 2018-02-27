@@ -1,3 +1,21 @@
+hexadecimal_values = {
+    "A" : 10,
+    "B" : 11,
+    "C" : 12,
+    "D" : 13,
+    "E" : 14,
+    "F" : 15,
+    "1" : 1,
+    "2" : 2,
+    "3" : 3,
+    "4" : 4,
+    "5" : 5,
+    "6" : 6,
+    "7" : 7,
+    "8" : 8,
+    "9" : 9
+    }
+
 def get_result(values):
     result = []
     results = []
@@ -28,41 +46,12 @@ def another():
 
 
 def get_hexadecimal():
-    hexdecimal = raw_input("What hexdecimal do you want to convert?\n")
+    hexadecimal = raw_input("What hexadecimal do you want to convert?\n")
     values = []
-    for letter in hexdecimal:
-        if letter == "A":
-            values.append(10)
-        elif letter == "B":
-            values.append(11)
-        elif letter == "C":
-            values.append(12)
-        elif letter == "D":
-            values.append(13)
-        elif letter == "E":
-            values.append(14)
-        elif letter == "F":
-            values.append(15)
-        elif letter == "1":
-            values.append(1)
-        elif letter == "2":
-            values.append(2)
-        elif letter == "3":
-            values.append(3)
-        elif letter == "4":
-            values.append(4)
-        elif letter == "5":
-            values.append(5)
-        elif letter == "6":
-            values.append(6)
-        elif letter == "7":
-            values.append(7)
-        elif letter == "8":
-            values.append(8)
-        elif letter == "9":
-            values.append(9)
-        else:
-            print ("please enter values only including the following:\n0123456789ABCDEF")
+    for letter in hexadecimal:
+        values.append(hexadecimal_values[letter])
+        if not letter:
+            print ("Enter values only including the following:\n0123456789ABCDEF\nInput invalid.")
     values = map(int, values)
     get_result(values)          
 
