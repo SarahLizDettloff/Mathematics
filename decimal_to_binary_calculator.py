@@ -1,20 +1,35 @@
+binary_values = {
+    1 : "001",
+    2 : "0010",
+    3 : "0011",
+    4 : "0100",
+    5 : "0101",
+    6 : "0110",
+    7 : "0111",
+    8 : "1000",
+    9 : "1001",
+    10 : "1010",
+    11 : "1011",
+    12 : "1100",
+    13 : "1101",
+    14 : "1110",
+    15 : "1111"
+    }
+
 def convert_to_binary(decimal):
     result = 0
     quotient = 0
     remainder = 0
     binary = []
     if decimal >= 16:
-        try:
-            while decimal > 0:
-                quotient = (decimal) / 2
-                remainder = round((float(decimal) / 2) - quotient)
-                binary.append(int(remainder))
-                decimal = quotient
-            result = "".join(map(str,reversed(binary)))
-            print(result)
-            another()
-        except:
-            pass
+        while decimal > 0:
+            quotient = (decimal) / 2
+            remainder = round((float(decimal) / 2) - quotient)
+            binary.append(int(remainder))
+            decimal = quotient
+        result = "".join(map(str,reversed(binary)))
+        print(result)
+        another()
     elif decimal <= 15:
         get_binary_value(decimal)
     elif decimal < 0:
@@ -26,36 +41,7 @@ def convert_to_binary(decimal):
 
 def get_binary_value(decimal):
     result = 0
-    if decimal == 1:
-        result = "0001"
-    elif decimal == 2:
-        result = "0010"
-    elif decimal == 3:
-        result = "0011"
-    elif decimal == 4:
-        result = "0100"
-    elif decimal == 5:
-        result = "0101"
-    elif decimal == 6:
-        result = "0110"
-    elif decimal == 7:
-        result = "0111"
-    elif decimal == 8:
-        result = "1000"
-    elif decimal == 9:
-        result = "1001"
-    elif decimal == 10:
-        result = "1010"
-    elif decimal == 11:
-        result = "1011"
-    elif decimal == 12:
-        result = "1100"
-    elif decimal == 13:
-        result = "1101"
-    elif decimal == 14:
-        result = "1110"
-    elif decimal == 15:
-        result = "1111"
+    result = binary_values[decimal]
     print(result)
     another()
 
