@@ -1,7 +1,7 @@
 # Python Math
 
 # About
-Completed using Python version 2.7.14.
+Mathamatics is important in problem solving, understanding persception, and practicing logic. This journal consists of regular math practices created in Python version 2.7.14.
 
 # Volume of a Frustum
 This volume was first introduced in ancient Egyptian times. It is theorized to be the equation whic was used to originally build pyramids.
@@ -14,3 +14,6 @@ Planck Constant is used as a foundational concept in quantum mechanics since it 
 
 # Decimal to Binary Calculator
 Binary is a two base number system which is the simplest numeric system. Each digit represents a bit, which is why it is preferred by many computer engineers. Binary has a rich history that affected minds such as the philosopher Francis Bacon to the mathematician George Boole.
+
+# Buoyancy Force Calculator
+This calculator contains a function to calculate the volume of six different shapes for you, finding the radius by diameter, and of course calculates the buoyancy force using the following equation:  Fb = Vs × D × g
