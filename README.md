@@ -17,3 +17,10 @@ Binary is a two base number system which is the simplest numeric system. Each di
 
 # Buoyancy Force Calculator
 This calculator contains a function to calculate the volume of six different shapes for you, finding the radius by diameter, and of course calculates the buoyancy force using the following equation:  Fb = Vs × D × g
+
+# The Big Four
+The big four is a set of four equations which can be executed to find an unknown information about an object's motion. The kinematic equations are distributed in this application to execute the actual equation; however, in practical use the approach will be alerted to find the variable which is unknown. D is for displacement, A is for acceleration, T is for time, vi is for initial velocity, and vf is for final velocity. The four equations are:         
+d = vi * t + 1/2 * a * t^2          
+vf^2 = vi^2 + 2 * a * d     
+vf = vi + a * t                     
+d = ((vi + vf) / 2 ) * 2
