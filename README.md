@@ -39,3 +39,15 @@ For more information on Mathplotlib: https://matplotlib.org/
 
 For more information on Jupyter Lab: https://jupyter.org/
 
+# Example of a line graph with mean family income in 1999 compared to 2000
+Comparison line graph containing data from 1999 and 2000 of mean family incomes was obtained, then plotted with numPy and Mathplotlib.
+
+Example of graph results:
+
+![Alt text](https://s17.postimg.org/aupo4j0wv/Linegraph_Example.png?raw=true "Title")
+
+Data collections were obtained through https://www.data.gov/
+
+Data for this particular graph can be found on: https://catalog.data.gov/dataset/income-total-and-mean-and-median-family-income-in-1999-cos-2000
+
+
