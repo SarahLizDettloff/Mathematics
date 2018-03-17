@@ -24,3 +24,14 @@ d = vi * t + 1/2 * a * t^2
 vf^2 = vi^2 + 2 * a * d     
 vf = vi + a * t                     
 d = ((vi + vf) / 2 ) * 2
+
+# Sine Wave
+A sine wave is the trigonometirc function of an angle executed by a visual graph. 
+This example shows the periodic oscillations amplitude of displacement which is displayed at each point which is proportional to the sine of the phase angel of displacement. An example of the graph results:
+
+![Alt text](https://s17.postimg.org/t8lyjsa33/sinewave.png?raw=true "Title")
+
+This was executed in Jupyter Lab, Python 2.7, with imports from numPy and mathplotlib
+For more information on NumPy: http://www.numpy.org/
+For more information on Mathplotlib: https://matplotlib.org/
+For more information on Jupyter Lab: https://jupyter.org/
