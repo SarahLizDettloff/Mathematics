@@ -1,4 +1,4 @@
-# Python Math
+# Mathematics with Python
 
 # About
 Mathamatics is important in problem solving, understanding persception, and practicing logic. This journal consists of regular math practices created in Python version 2.7.14.
@@ -31,7 +31,11 @@ This example shows the periodic oscillations amplitude of displacement which is 
 
 ![Alt text](https://s17.postimg.org/t8lyjsa33/sinewave.png?raw=true "Title")
 
-This was executed in Jupyter Lab, Python 2.7, with imports from numPy and mathplotlib
+This was executed in Jupyter Lab, Python 2.7, with imports from numPy and mathplotlib.
+
 For more information on NumPy: http://www.numpy.org/
+
 For more information on Mathplotlib: https://matplotlib.org/
+
 For more information on Jupyter Lab: https://jupyter.org/
+
