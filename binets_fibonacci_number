@@ -1,0 +1,23 @@
+import math
+
+def get_n():
+    n = float(raw_input("Enter the value of Fib(n):\n"))
+    calculate(n)
+
+def another():
+    answer = raw_input("Would you like to enter another number? (Y/N):\n")
+    if answer == str('Y'):
+        get_n()
+    else:
+        exit()
+
+def calculate(n):
+    phi_positive = float(1.6180339**n)
+    phi_negative = -(float(1.6180339**-n))
+    result = float((phi_positive - (phi_negative)) / float(math.sqrt(5)))
+    print(str(result))
+    another()
+    
+
+if __name__=="__main__":
+    get_n()
