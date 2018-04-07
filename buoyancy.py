@@ -9,7 +9,7 @@ def get_buoyancy():
         density = raw_input("What is the density of the fluid?\nIf using water enter 1 to accept the density of 1,000 kilograms/meters^3\n")
         if density == "1":
             density = int(1000)
-        force = raw_input("What is the frce of gravity?\nIf using constant downward force which is 9.81 Newtons/kilogram then enter 1.\n")
+        force = raw_input("What is the force of gravity?\nIf using constant downward force which is 9.81 Newtons/kilogram then enter 1.\n")
         if force == "1":
             force = float(9.81)
         result = float(volume) * float(density) * float(force)
