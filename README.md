@@ -4,13 +4,13 @@
 Mathamatics is important in problem solving, understanding persception, and practicing logic. This journal consists of regular math practices created in Python version 2.7.14.
 
 # Volume of a Frustum
-This volume was first introduced in ancient Egyptian times. It is theorized to be the equation whic was used to originally build pyramids.
+This volume was first introduced in ancient Egyptian times. It is theorized to be the equation which was used to originally build pyramids.
 
 # Hexadecimal to Decimal Calculator
 Hexadecimal is also known as base 16 since it is a numeric system which contains 16 numbers. It has a rich history for being used in ancient times, as well as being an essential concept in computer science in modern times. 
 
 # Planck Constant
-Planck Constant is used as a foundational concept in quantum mechanics since it is the quantum of action in a phsyical constant. Max Planck developed this concept along with many others that resulted in him winning the Nobel Prize in 1918. 
+Planck Constant is used as a foundational concept in quantum mechanics since it is the quantum of action in a physical constant. Max Planck developed this concept along with many others that resulted in him winning the Nobel Prize in 1918. 
 
 # Decimal to Binary Calculator
 Binary is a two base number system which is the simplest numeric system. Each digit represents a bit, which is why it is preferred by many computer engineers. Binary has a rich history that affected minds such as the philosopher Francis Bacon to the mathematician George Boole.
@@ -51,7 +51,7 @@ Data collections were obtained through https://www.data.gov/
 Data for this particular graph can be found on: https://catalog.data.gov/dataset/income-total-and-mean-and-median-family-income-in-1999-cos-2000
 
 # Binet's Fibonacci Number
-Simple calculator using Binet's Fibonacci formula will calculate for the n-th of a fibonacci number. The formula is Phi to the square root of n subtracted by negative Phi to the negative square root of n which is then divided by the square root of 5. Phi is the golden ratio which in this case is inputted into the seventh decimal place. The fibonacci sequence can be seen throughout nature from the petals in flowers, to pinecones, to seashells, to facial characteristics, to animals, to insects, and to sprial galaxies. 
+Simple calculator using Binet's Fibonacci formula will calculate for the n-th of a fibonacci number. The formula is Phi to the square root of n subtracted by negative Phi to the negative square root of n which is then divided by the square root of 5. Phi is the golden ratio which in this case is inputted into the seventh decimal place. The fibonacci sequence can be seen throughout nature from the petals in flowers, to pine cones, to seashells, to facial characteristics, to animals, to insects, and to spiral galaxies. 
 
 # Summary
 This console application contains all modules except for Sine Wave and Line Graph. It allows the access to any of these equations by simply entering in a value which coorelates with the dictionary. 
