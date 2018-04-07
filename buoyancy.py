@@ -17,7 +17,7 @@ def get_buoyancy():
         
     
 def get_volume():
-    shape = raw_input("Enter the number correlating with the shape you want to find the volume for:\n1.Cube\n2.Recetangular Prism\n3.Cylinder\n4.Regular Square Pyramid\n5.Cone\n6.Sphere\n")
+    shape = raw_input("Enter the number correlating with the shape you want to find the volume for:\n1.Cube\n2.Rectangular Prism\n3.Cylinder\n4.Regular Square Pyramid\n5.Cone\n6.Sphere\n")
     if shape == "1":
         length = int(raw_input("What is the length of one of the sides of the cube in meters?\n"))
         volume = float(length * length * length)
