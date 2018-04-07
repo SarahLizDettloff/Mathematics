@@ -52,3 +52,6 @@ Data for this particular graph can be found on: https://catalog.data.gov/dataset
 
 # Binet's Fibonacci Number
 Simple calculator using Binet's Fibonacci formula will calculate for the n-th of a fibonacci number. The formula is Phi to the square root of n subtracted by negative Phi to the negative square root of n which is then divided by the square root of 5. Phi is the golden ratio which in this case is inputted into the seventh decimal place. The fibonacci sequence can be seen throughout nature from the petals in flowers, to pinecones, to seashells, to facial characteristics, to animals, to insects, and to sprial galaxies. 
+
+# Summary
+This console application contains all modules except for Sine Wave and Line Graph. It allows the access to any of these equations by simply entering in a value which coorelates with the dictionary. 
