@@ -1,6 +1,6 @@
 def get_volume(height, lower_r, upper_r):
     volume = ((1/ float(3)) * height) * (float ((upper_r**2) + (upper_r*lower_r) + (lower_r**2)))
-    print ("The volume of the frustum is: " + str(area))
+    print ("The volume of the frustum is: " + str(volume))
 
 def main():
     height = input("What is the height of the frustum?:\n")
