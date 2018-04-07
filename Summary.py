@@ -115,6 +115,9 @@ class PlanckConstant(object):
         print("Planck's constant per a second is:  " + str(result))
 
     def which_planck(self):
+        """
+        Allows the user to pick which equation to use to calculate Planck's Constant.
+        """
         answer = raw_input(
             "What would you like to calculate?\n"
             "Enter 1 for Energy of a light photon.\n"
@@ -145,6 +148,9 @@ class Buoyancy(object):
         another_problem()
 
     def find_volume(self):
+        """
+        To choose which shape to use.
+        """
         shape = raw_input(
             "Enter the number correlating with the shape you want to find the volume for:\n"
             "1.Cube\n"
@@ -224,6 +230,11 @@ class Buoyancy(object):
             print("Enter one of the options by hitting the correlating number. Only 1 through 6.")
 
     def get_buoyancy(self):
+        """
+        Calculates the buoyancy and allows the user to type in help in order to obtain the volume according to the shape
+        of the object.
+        """
+        
         volume = raw_input(
             "What is the volume of the submerged object?\n"
             "Enter help if you need assistance to calculate the volume.\n")
@@ -261,6 +272,9 @@ class BigFour(object):
         another_problem()
 
     def displacement_with_acceleration(self):
+        """
+        Calculates the displacement with acceleration
+        """
         initial_velocity = float(raw_input("Enter the inital velocity of the object in m/s: \n"))
         time = float(raw_input("Enter the time in seconds: \n"))
         acceleration = float(raw_input("Enter the acceleration in m/s^2:\n"))
@@ -268,6 +282,9 @@ class BigFour(object):
         print("The displacement with acceleration is: " + str(result) + "m \n")
 
     def final_velocity(self):
+        """
+        Calculates the final velocity.
+        """
         initial_velocity = float(raw_input("Enter the inital velocity of the object in m/s: \n"))
         time = float(raw_input("Enter the time in seconds: \n"))
         acceleration = float(raw_input("Enter the acceleration in m/s^2:\n"))
@@ -275,6 +292,9 @@ class BigFour(object):
         print("The final velocity is: " + str(result) + "m \n")
 
     def displacement_without_acceleration(self):
+        """
+        Calculates displacement without known acceleration.
+        """
         initial_velocity = float(raw_input("Enter the inital velocity of the object in m/s: \n"))
         time = float(raw_input("Enter the time in seconds: \n"))
         final_velocity = float(raw_input("Enter the final velocity of the object in m/s: \n"))
@@ -282,6 +302,9 @@ class BigFour(object):
         print("The displacement is: " + str(result) + "m \n")
 
     def final_velocity_squared(self):
+        """
+        Calculates the final velocity squared.
+        """
         acceleration = float(raw_input("Enter the acceleration in m/s^2:\n"))
         initial_velocity = float(raw_input("Enter the inital velocity of the object in m/s: \n"))
         displacement = float(raw_input("Enter the displacement in m:\n"))
@@ -289,6 +312,9 @@ class BigFour(object):
         print("The final velocity squared is: " + str(result) + "m \n")
 
     def which_equation(self):
+        """
+        Allows the user to choose one of the big four kinematic equations to perform. 
+        """
         answer = raw_input(
             "Enter the number of the kinematic equation you want to solve:\n"
             "1.Displacement with known acceleration.\n"
@@ -338,6 +364,9 @@ class DecimalBinary(object):
         another_problem()
 
     def convert_to_binary(self, decimal):
+        """
+        Converts a decimal to binary.
+        """
         result = 0
         binary = []
 
@@ -359,6 +388,9 @@ class DecimalBinary(object):
         print(result)
 
     def get_decimal(self):
+        """
+        Gets the decimal from the user's input.
+        """
         decimal = raw_input("What decimal do you want to convert to binary?\n")
         try:
             decimal = int(decimal)
@@ -398,6 +430,9 @@ class HexadecimalDecimal(object):
         another_problem()
 
     def get_result(self, values):
+        """
+        Calculates the hexadecimal to decimal
+        """
         results = []
         power = len(values) - 1
         sum = 0
@@ -412,6 +447,9 @@ class HexadecimalDecimal(object):
         print sum
 
     def get_hexadecimal(self):
+        """
+        Gets the hexadecimal frmo the users input.
+        """
         hexadecimal = raw_input("What hexadecimal do you want to convert?\n")
         values = []
         for letter in hexadecimal:
@@ -423,12 +461,14 @@ class HexadecimalDecimal(object):
 
 
 class Main(object):
-
+        """
+        This handles the users input and determines which mathematical equation to perform.
+        """
     def __init__(self):
         self.get_answer()
 
     def get_answer(self):
-        answer = raw_input("Enter the following number to choose what mathematics function you would like to preform.\n"
+        answer = raw_input("Enter the following number to choose what mathematics function you would like to perform.\n"
                            "1.Binet's Fibbonacci Number\n"
                            "2.Volume of a Frustum\n"
                            "3.Planck Constant\n"
@@ -453,6 +493,9 @@ class Main(object):
 
 
 def another_problem():
+    """
+    Called after every class is completed to allow the user to perform another equation if they wish to do so. 
+    """
     another = raw_input("Is there another problem you would like to solve?\nEnter 1 for Yes or 2 for No.\n")
     if another == "1":
         Main()
