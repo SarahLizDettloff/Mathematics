@@ -7,7 +7,7 @@ class BinetsFibonacciNumber(object):
     The formula is Phi to the square root of n subtracted by negative Phi to the negative square root of n
     which is then divided by the square root of 5. Phi is the golden ratio which in this case is inputted into
     the seventh decimal place. The fibonacci sequence can be seen throughout nature from the petals in flowers,
-    to pinecones, to seashells, to facial characteristics, to animals, to insects, and to sprial galaxies.
+    to pine cones, to seashells, to facial characteristics, to animals, to insects, and to spiral galaxies.
     """
     def __init__(self):
         self.calculate_fib()
@@ -28,7 +28,7 @@ class BinetsFibonacciNumber(object):
 class VolumeFrustum(object):
     """
     This volume was first introduced in ancient Egyptian times.
-    It is theorized to be the equation whic was used to originally build pyramids.
+    It is theorized to be the equation which was used to originally build pyramids.
     """
     def __init__(self):
         self.get_volume()
@@ -108,9 +108,13 @@ class PlanckConstant(object):
             "Enter 1 to use 299792458 meters per a second as the speed of light.\n"
             "Enter 2 to input the speed of light meters per a second.\n")
         if speed_of_light_answer == 1:
-            speed_of_light = 299792458
+            speed_of_light = float(299792458)
         elif speed_of_light_answer == 2:
             speed_of_light = input("Enter the speed of light:\n")
+        else:
+            print("Enter either 1 or 2 for the speed of light.\n")
+            self.calculate_plancks_constant_light()
+        
         result = float(energy_of_light_photon * (wavelength_of_light / speed_of_light))
         print("Planck's constant per a second is:  " + str(result))
 
@@ -124,14 +128,14 @@ class PlanckConstant(object):
             "Enter 2 for Frequency.\n"
             "Enter 3 for Planck's Constant with known frequency\n"
             "Enter 4 for Planck's Constant by wavelength and speed of light.\n")
-        if answer == "1":
-            self.calculate_energy_of_light()
-        elif answer == "2":
-            self.calculate_frequency()
-        elif answer == "3":
-            self.calculate_plancks_constant_freq()
-        elif answer == "4":
-            self.calculate_plancks_constant_light()
+        if answer <= "4":
+            equation_options = {
+                "1": self.calculate_energy_of_light,
+                "2": self.calculate_frequency,
+                "3": self.calculate_plancks_constant_freq,
+                "4": self.calculate_plancks_constant_light
+            }
+            equation_options[answer]()
         else:
             print("Enter a number within the range of 1 to 4 only.")
             self.which_planck()
@@ -321,14 +325,14 @@ class BigFour(object):
             "2.Displacement without known acceleration.\n"
             "3.Final Velocity.\n"
             "4.Final Velocity Squared.\n")
-        if answer == "1":
-            self.displacement_with_acceleration()
-        elif answer == "2":
-            self.displacement_without_acceleration()
-        elif answer == "3":
-            self.final_velocity()
-        elif answer == "4":
-            self.final_velocity_squared()
+        if answer <= "4":
+            equation_options = {
+                "1": self.displacement_with_acceleration,
+                "2": self.displacement_without_acceleration,
+                "3": self.final_velocity,
+                "4": self.final_velocity_squared
+            }
+            equation_options[answer]()
         else:
             print("This will only accept an input of 1, 2, 3, or 4.")
             BigFour()
