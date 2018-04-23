@@ -13,12 +13,18 @@ class BinetsFibonacciNumber(object):
         self.calculate_fib()
         another_problem()
 
-    def calculate_fib(self):
+    @staticmethod
+    def calculate_fib():
         """
         Gets the fib number
         Calculates the result of the fib to fibonacci
         """
-        n = float(raw_input("Enter the value of Fib(n):\n"))
+        try:
+            n = float(raw_input("Enter the value of Fib(n):\n"))
+        except ValueError:
+            print("Sorry, only numerical responses are valid.\n")
+            BinetsFibonacciNumber.calculate_fib()
+
         phi_positive = float(1.6180339 ** n)
         phi_negative = -(float(1.6180339 ** -n))
         result = float((phi_positive - phi_negative) / float(math.sqrt(5)))
@@ -34,10 +40,25 @@ class VolumeFrustum(object):
         self.get_volume()
         another_problem()
 
-    def get_volume(self):
-        height = input("What is the height of the frustum?:\n")
-        lower_r = input("What is the width of the top of the frustum?:\n")
-        upper_r = input("What is the length of the bottom of the frustum?:\n")
+    @staticmethod
+    def get_volume():
+        try:
+            height = input("What is the height of the frustum?:\n")
+        except ValueError:
+            print("Sorry, only numerical responses are valid.\n")
+            VolumeFrustum.get_volume()
+
+        try:
+            lower_r = input("What is the width of the top of the frustum?:\n")
+        except ValueError:
+            print("Sorry, only numerical responses are valid.\n")
+            VolumeFrustum.get_volume()
+
+        try:
+            upper_r = input("What is the length of the bottom of the frustum?:\n")
+        except ValueError:
+            print("Sorry, only numerical responses are valid.\n")
+            VolumeFrustum.get_volume()
         volume = ((1 / float(3)) * height) * (float((upper_r ** 2) + (upper_r * lower_r) + (lower_r ** 2)))
         print ("The volume of the frustum is: " + str(volume))
 
@@ -52,7 +73,8 @@ class PlanckConstant(object):
         self.which_planck()
         another_problem()
 
-    def calculate_energy_of_light(self):
+    @staticmethod
+    def calculate_energy_of_light():
         """
         Calculates the energy of a light photon
         """
@@ -69,12 +91,15 @@ class PlanckConstant(object):
             planck_constant = math.pi * 2
         elif planck_constant_answer == "4":
             planck_constant = input("Enter Planck's constant per second: \n")
+        else:
+            PlanckConstant.calculate_energy_of_light()
 
         frequency = input("Enter the frequency of light in hertz: \n")
         result = float(planck_constant) * float(frequency)
         print("The energy of a light photo is: " + str(result))
 
-    def calculate_frequency(self):
+    @staticmethod
+    def calculate_frequency():
         """
         Calculates the frequency.
         """
@@ -89,7 +114,8 @@ class PlanckConstant(object):
         result = float(speed_of_light) / float(wavelength)
         print("The frequency of light in hertz is: " + str(result))
 
-    def calculate_plancks_constant_freq(self):
+    @staticmethod
+    def calculate_plancks_constant_freq():
         """
         Calculates Planck's Constant with known frequency
         """
@@ -104,18 +130,19 @@ class PlanckConstant(object):
         """
         energy_of_light_photon = input("Enter the energy of the light photon: \n")
         wavelength_of_light = input("Enter the wavelength of light in meters: \n")
-        speed_of_light_answer = input(
+        speed_of_light_answer = raw_input(
             "Enter 1 to use 299792458 meters per a second as the speed of light.\n"
             "Enter 2 to input the speed of light meters per a second.\n")
-        if speed_of_light_answer == 1:
+        if speed_of_light_answer == '1':
             speed_of_light = 299792458
-        elif speed_of_light_answer == 2:
+        elif speed_of_light_answer == '2':
             speed_of_light = input("Enter the speed of light:\n")
         else:
             print("Enter either 1 or 2 for the speed of light.\n")
             self.calculate_plancks_constant_light()
+
         result = float(energy_of_light_photon * (wavelength_of_light / speed_of_light))
-        print("Planck's constant per a second is:  " + str(result))
+        print ("Planck's constant per a second is:  " + str(result))
 
     def which_planck(self):
         answer = raw_input(
@@ -156,75 +183,97 @@ class Buoyancy(object):
             "4.Regular Square Pyramid\n"
             "5.Cone\n"
             "6.Sphere\n")
-
-        if shape == "1":
-            """
-            To find volume for a cube.
-            """
-            length = int(raw_input("What is the length of one of the sides of the cube in meters?\n"))
-            volume = float(length * length * length)
-            print("The volume of a cube is " + str(volume) + "  meters^3\n")
-            volume = float(volume) / 2
-            print("The volume of a cube submerged is " + str(volume) + "  meters^3\n")
-        elif shape == "2":
-            """
-            To find volume for a rectangular prism.
-            """
-            length = int(raw_input("What is the length of the rectangular prism in meters?\n"))
-            width = int(raw_input("What is the width of the rectangular prism in meters?\n"))
-            height = int(raw_input("What is the height of the rectangular prism in meters?\n"))
-            volume = float(length * width * height)
-            print("The volume of a rectangular prism is " + str(volume) + "  meters^3\n")
-            volume = float(volume) / 2
-            print("The volume of a rectangular prism submerged is " + str(volume) + "  meters^3\n")
-        elif shape == "3":
-            """
-            To find volume for a cylinder.
-            """
-            diameter = int(raw_input("What is the diameter of the cylinder in meters?\n"))
-            r = float(diameter / 2)
-            height = int(raw_input("What is the height of the rectangular prism in meters?\n"))
-            volume = float(math.pi * r ** 2 * height)
-            print("The volume of a cylinder is " + str(volume) + "  meters^3\n")
-        elif shape == "4":
-            """
-            To find volume for a regular square pyramid.
-            """
-            base = int(raw_input("What is the length of the base of the square pyramid in meters?\n"))
-            base = float(base * base)
-            height = int(raw_input("What is the height of the square pyramid in meters?\n"))
-            stuff = float(1) / float(3)
-            volume = float(base * height) * float(stuff)
-            print("The volume of a regular square pyramid is " + str(volume) + " meters\n")
-            volume = float(volume) / 2
-            print("The volume of a regular square pyramid submerged is " + str(volume) + "  meters^3\n")
-        elif shape == "5":
-            """
-            To find volume for a cone.
-            """
-            diameter = int(raw_input("What is the diameter of the cylinder in meters?\n"))
-            r = float(diameter / 2)
-            r = float(r * r)
-            division = float(1) / float(3)
-            height = int(raw_input("What is the height of the cone in meters?\n"))
-            volume = float(division * (math.pi * r * height))
-            print("The volume of a cone is " + str(volume) + "  meters^3\n")
-            volume = float(volume) / 2
-            print("The volume of a cone submerged is " + str(volume) + "  meters^3\n")
-        elif shape == "6":
-            """
-            To find volume for a sphere.
-            """
-            diameter = int(input("What is the diameter of the sphere in meters?\n"))
-            r = float(diameter) / 2
-            r = float(r ** 3)
-            division = float(4) / float(3)
-            volume = float(division) * r * float(math.pi)
-            print("The volume of a sphere is " + str(volume) + "  meters^3\n")
-            volume = float(volume) / 2
-            print("The volume of a sphere submerged is " + str(volume) + "  meters^3\n")
+        if shape <= "6":
+            equation_options = {
+                "1": self.cube,
+                "2": self.rectangular_prism,
+                "3": self.cylinder,
+                "4": self.pyramid,
+                "5": self.cone,
+                "6": self.sphere
+            }
+            equation_options[shape]()
         else:
-            print("Enter one of the options by hitting the correlating number. Only 1 through 6.")
+            print("This will only accept an input of 1, 2, 3, 4, 5, or 6.")
+            self.find_volume()
+
+    @staticmethod
+    def cube():
+        """
+        To find volume for a cube.
+        """
+        length = int(raw_input("What is the length of one of the sides of the cube in meters?\n"))
+        volume = float(length * length * length)
+        print("The volume of a cube is " + str(volume) + "  meters^3\n")
+        volume = float(volume) / 2
+        print("The volume of a cube submerged is " + str(volume) + "  meters^3\n")
+
+    @staticmethod
+    def rectangular_prism():
+        """
+        To find volume for a rectangular prism.
+        """
+        length = int(raw_input("What is the length of the rectangular prism in meters?\n"))
+        width = int(raw_input("What is the width of the rectangular prism in meters?\n"))
+        height = int(raw_input("What is the height of the rectangular prism in meters?\n"))
+        volume = float(length * width * height)
+        print("The volume of a rectangular prism is " + str(volume) + "  meters^3\n")
+        volume = float(volume) / 2
+        print("The volume of a rectangular prism submerged is " + str(volume) + "  meters^3\n")
+
+    @staticmethod
+    def cylinder():
+        """
+        To find volume for a cylinder.
+        """
+        diameter = int(raw_input("What is the diameter of the cylinder in meters?\n"))
+        r = float(diameter / 2)
+        height = int(raw_input("What is the height of the rectangular prism in meters?\n"))
+        volume = float(math.pi * r ** 2 * height)
+        print("The volume of a cylinder is " + str(volume) + "  meters^3\n")
+
+    @staticmethod
+    def pyramid():
+        """
+        To find volume for a regular square pyramid.
+        """
+        base = int(raw_input("What is the length of the base of the square pyramid in meters?\n"))
+        base = float(base * base)
+        height = int(raw_input("What is the height of the square pyramid in meters?\n"))
+        stuff = float(1) / float(3)
+        volume = float(base * height) * float(stuff)
+        print("The volume of a regular square pyramid is " + str(volume) + " meters\n")
+        volume = float(volume) / 2
+        print("The volume of a regular square pyramid submerged is " + str(volume) + "  meters^3\n")
+
+    @staticmethod
+    def cone():
+        """
+        To find volume for a cone.
+        """
+        diameter = int(raw_input("What is the diameter of the cylinder in meters?\n"))
+        r = float(diameter / 2)
+        r = float(r * r)
+        division = float(1) / float(3)
+        height = int(raw_input("What is the height of the cone in meters?\n"))
+        volume = float(division * (math.pi * r * height))
+        print("The volume of a cone is " + str(volume) + "  meters^3\n")
+        volume = float(volume) / 2
+        print("The volume of a cone submerged is " + str(volume) + "  meters^3\n")
+
+    @staticmethod
+    def sphere():
+        """
+        To find volume for a sphere.
+        """
+        diameter = int(input("What is the diameter of the sphere in meters?\n"))
+        r = float(diameter) / 2
+        r = float(r ** 3)
+        division = float(4) / float(3)
+        volume = float(division) * r * float(math.pi)
+        print("The volume of a sphere is " + str(volume) + "  meters^3\n")
+        volume = float(volume) / 2
+        print("The volume of a sphere submerged is " + str(volume) + "  meters^3\n")
 
     def get_buoyancy(self):
         volume = raw_input(
@@ -232,19 +281,24 @@ class Buoyancy(object):
             "Enter help if you need assistance to calculate the volume.\n")
         if volume == "help":
             self.find_volume()
+            volume = float(input("What volume would you like to use?\n"))
+        density = raw_input(
+            "What is the density of the fluid?\n"
+            "If using water enter 1 to accept the density of 1,000 kilograms/meters^3\n")
+        if density == "1":
+            density = int(1000)
         else:
-            density = raw_input(
-                "What is the density of the fluid?\n"
-                "If using water enter 1 to accept the density of 1,000 kilograms/meters^3\n")
-            if density == "1":
-                density = int(1000)
-            force = raw_input(
-                "What is the force of gravity?\n"
-                "If using constant downward force which is 9.81 Newtons/kilogram then enter 1.\n")
-            if force == "1":
-                force = float(9.81)
-            result = float(volume) * float(density) * float(force)
-            print("The bouyancy is " + str(result) + " Newtons.")
+            density = float(input("What density would you like to use? Kilograms/Meters\n"))
+        force = raw_input(
+            "What is the force of gravity?\n"
+            "If using constant downward force which is 9.81 Newtons/kilogram then enter 1.\n")
+        if force == "1":
+            force = float(9.81)
+        else:
+            force = float(input("What force would you like to use? Newtons/Kilogram\n"))
+
+        result = float(volume) * float(density) * float(force)
+        print("The bouyancy is " + str(result) + " Newtons.")
 
 
 class BigFour(object):
@@ -263,35 +317,40 @@ class BigFour(object):
         self.which_equation()
         another_problem()
 
-    def displacement_with_acceleration(self):
-        initial_velocity = float(raw_input("Enter the inital velocity of the object in m/s: \n"))
+    @staticmethod
+    def displacement_with_acceleration():
+        initial_velocity = float(raw_input("Enter the initial velocity of the object in m/s: \n"))
         time = float(raw_input("Enter the time in seconds: \n"))
         acceleration = float(raw_input("Enter the acceleration in m/s^2:\n"))
         result = (float(initial_velocity) * float(time) + float(0.5) * float(acceleration) * float(time ** 2))
         print("The displacement with acceleration is: " + str(result) + "m \n")
 
-    def final_velocity(self):
-        initial_velocity = float(raw_input("Enter the inital velocity of the object in m/s: \n"))
+    @staticmethod
+    def final_velocity():
+        initial_velocity = float(raw_input("Enter the initial velocity of the object in m/s: \n"))
         time = float(raw_input("Enter the time in seconds: \n"))
         acceleration = float(raw_input("Enter the acceleration in m/s^2:\n"))
         result = (float(initial_velocity) + (float(time) * float(acceleration)))
         print("The final velocity is: " + str(result) + "m \n")
 
-    def displacement_without_acceleration(self):
+    @staticmethod
+    def displacement_without_acceleration():
         initial_velocity = float(raw_input("Enter the inital velocity of the object in m/s: \n"))
         time = float(raw_input("Enter the time in seconds: \n"))
         final_velocity = float(raw_input("Enter the final velocity of the object in m/s: \n"))
         result = (((float(initial_velocity) * float(final_velocity)) / 2) * float(time))
         print("The displacement is: " + str(result) + "m \n")
 
-    def final_velocity_squared(self):
+    @staticmethod
+    def final_velocity_squared():
         acceleration = float(raw_input("Enter the acceleration in m/s^2:\n"))
         initial_velocity = float(raw_input("Enter the inital velocity of the object in m/s: \n"))
         displacement = float(raw_input("Enter the displacement in m:\n"))
         result = float(float(initial_velocity * 2) + (2 * float(acceleration) * float(displacement)))
         print("The final velocity squared is: " + str(result) + "m \n")
 
-    def which_equation(self):
+    @staticmethod
+    def which_equation():
         answer = raw_input(
             "Enter the number of the kinematic equation you want to solve:\n"
             "1.Displacement with known acceleration.\n"
@@ -300,10 +359,10 @@ class BigFour(object):
             "4.Final Velocity Squared.\n")
         if answer <= "4":
             equation_options = {
-                "1": self.displacement_with_acceleration,
-                "2": self.displacement_without_acceleration,
-                "3": self.final_velocity,
-                "4": self.final_velocity_squared
+                "1": BigFour.displacement_with_acceleration(),
+                "2": BigFour.displacement_without_acceleration,
+                "3": BigFour.final_velocity,
+                "4": BigFour.final_velocity_squared
             }
             equation_options[answer]()
         else:
@@ -400,10 +459,11 @@ class HexadecimalDecimal(object):
         self.get_hexadecimal()
         another_problem()
 
-    def get_result(self, values):
+    @staticmethod
+    def get_result(values):
         results = []
         power = len(values) - 1
-        sum = 0
+        sum_values = 0
         values = map(int, values)
         for value in values:
             base_16 = 16 ** power
@@ -411,8 +471,8 @@ class HexadecimalDecimal(object):
             results.append(result)
             power -= 1
         for result in results:
-            sum += result
-        print sum
+            sum_values += result
+        print sum_values
 
     def get_hexadecimal(self):
         hexadecimal = raw_input("What hexadecimal do you want to convert?\n")
