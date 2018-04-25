@@ -1,7 +1,5 @@
 # Mathematics with Python
 ##### Table of Contents
-[About](https://www.google.com)
-
 [Physics](https://github.com/SarahLizDettloff/Mathematics/tree/master/Physics)  
 
 [Algorithms](https://github.com/SarahLizDettloff/Mathematics/tree/master/Algorithms)  
