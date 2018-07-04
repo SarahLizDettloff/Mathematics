@@ -1,7 +1,43 @@
 import math
 
+class Main(object):
 
-class BinetsFibonacciNumber(object):
+    def __init__(self):
+        self.get_answer()
+
+    def get_answer(self):
+        answer = raw_input("Enter the following number to choose what mathematics function you would like to preform.\n"
+                           "1.Binet's Fibbonacci Number\n"
+                           "2.Volume of a Frustum\n"
+                           "3.Planck Constant\n"
+                           "4.Buoyancy\n"
+                           "5.The Big Four\n"
+                           "6.Decimal to Binary\n"
+                           "7.Hexadecimal to Decimal\n")
+        if answer < "8":
+            math_options = {
+                "1": BinetsFibonacciNumber,
+                "2": VolumeFrustum,
+                "3": PlanckConstant,
+                "4": Buoyancy,
+                "5": BigFour,
+                "6": DecimalBinary,
+                "7": HexadecimalDecimal
+            }
+            math_options[answer]()
+        else:
+            print("Please enter a value between 1 and 7.\n")
+            self.get_answer()
+
+    @staticmethod
+    def another_problem(self):
+        another = raw_input("Is there another problem you would like to solve?\nEnter 1 for Yes or 2 for No.\n")
+        if another == "1":
+            self.__init__()
+        else:
+            exit()
+
+class BinetsFibonacciNumber(Main):
     """
     Simple calculator using Binet's Fibonacci formula will calculate for the n-th of a fibonacci number.
     The formula is Phi to the square root of n subtracted by negative Phi to the negative square root of n
@@ -9,9 +45,10 @@ class BinetsFibonacciNumber(object):
     the seventh decimal place. The fibonacci sequence can be seen throughout nature from the petals in flowers,
     to pine cones, to seashells, to facial characteristics, to animals, to insects, and to spiral galaxies.
     """
+
     def __init__(self):
         self.calculate_fib()
-        another_problem()
+        super(BinetsFibonacciNumber, self).__init__()
 
     @staticmethod
     def calculate_fib():
@@ -30,15 +67,15 @@ class BinetsFibonacciNumber(object):
         result = float((phi_positive - phi_negative) / float(math.sqrt(5)))
         print("The Fibonacci number for " + str(n) + " is " + str(result))
 
-
-class VolumeFrustum(object):
+class VolumeFrustum(Main):
     """
     This volume was first introduced in ancient Egyptian times.
     It is theorized to be the equation which was used to originally build pyramids.
     """
+
     def __init__(self):
         self.get_volume()
-        another_problem()
+        super(VolumeFrustum, self).__init__()
 
     @staticmethod
     def get_volume():
@@ -60,18 +97,18 @@ class VolumeFrustum(object):
             print("Sorry, only numerical responses are valid.\n")
             VolumeFrustum.get_volume()
         volume = ((1 / float(3)) * height) * (float((upper_r ** 2) + (upper_r * lower_r) + (lower_r ** 2)))
-        print ("The volume of the frustum is: " + str(volume))
+        print("The volume of the frustum is: " + str(volume))
 
-
-class PlanckConstant(object):
+class PlanckConstant(Main):
     """
     Planck Constant is used as a foundational concept in quantum mechanics since it is the quantum of action
     in a physical constant. Max Planck developed this concept along with many others that resulted in him
     winning the Nobel Prize in 1918.
     """
+
     def __init__(self):
         self.which_planck()
-        another_problem()
+        super(PlanckConstant, self).__init__()
 
     @staticmethod
     def calculate_energy_of_light():
@@ -142,7 +179,7 @@ class PlanckConstant(object):
             self.calculate_plancks_constant_light()
 
         result = float(energy_of_light_photon * (wavelength_of_light / speed_of_light))
-        print ("Planck's constant per a second is:  " + str(result))
+        print("Planck's constant per a second is:  " + str(result))
 
     def which_planck(self):
         answer = raw_input(
@@ -163,16 +200,16 @@ class PlanckConstant(object):
             print("Enter a number within the range of 1 to 4 only.")
             self.which_planck()
 
-
-class Buoyancy(object):
+class Buoyancy(Main):
     """
     This calculator contains a function to calculate the volume of six different shapes for you,
     finding the radius by diameter, and of course calculates the buoyancy force using the following equation:
     Fb = Vs x D x g
     """
+
     def __init__(self):
         self.get_buoyancy()
-        another_problem()
+        super(Buoyancy, self).__init__()
 
     def find_volume(self):
         shape = raw_input(
@@ -300,8 +337,7 @@ class Buoyancy(object):
         result = float(volume) * float(density) * float(force)
         print("The bouyancy is " + str(result) + " Newtons.")
 
-
-class BigFour(object):
+class BigFour(Main):
     """
     The big four is a set of four equations which can be executed to find an unknown information about an object's
     motion. The kinematic equations are distributed in this application to execute the actual equation;
@@ -313,9 +349,10 @@ class BigFour(object):
     vf = vi + a * t
     d = ((vi + vf) / 2 ) * 2
     """
+
     def __init__(self):
         self.which_equation()
-        another_problem()
+        super(BigFour, self).__init__()
 
     @staticmethod
     def displacement_with_acceleration():
@@ -369,8 +406,7 @@ class BigFour(object):
             print("This will only accept an input of 1, 2, 3, or 4.")
             BigFour()
 
-
-class DecimalBinary(object):
+class DecimalBinary(Main):
     """
     Binary is a two base number system which is the simplest numeric system.
     Each digit represents a bit, which is why it is preferred by many computer engineers.
@@ -397,7 +433,7 @@ class DecimalBinary(object):
 
     def __init__(self):
         self.get_decimal()
-        another_problem()
+        super(DecimalBinary, self).__init__()
 
     def convert_to_binary(self, decimal):
         result = 0
@@ -429,8 +465,7 @@ class DecimalBinary(object):
             print("Input must be a numeric value.")
             DecimalBinary()
 
-
-class HexadecimalDecimal(object):
+class HexadecimalDecimal(Main):
     """
     Hexadecimal is also known as base 16 since it is a numeric system which contains 16 numbers.
     It has a rich history for being used in ancient times, as well as being an essential concept
@@ -457,7 +492,7 @@ class HexadecimalDecimal(object):
 
     def __init__(self):
         self.get_hexadecimal()
-        another_problem()
+        super(HexadecimalDecimal, self).__init__()
 
     @staticmethod
     def get_result(values):
@@ -484,45 +519,5 @@ class HexadecimalDecimal(object):
         values = map(int, values)
         self.get_result(values)
 
-
-class Main(object):
-
-    def __init__(self):
-        self.get_answer()
-
-    def get_answer(self):
-        answer = raw_input("Enter the following number to choose what mathematics function you would like to preform.\n"
-                           "1.Binet's Fibbonacci Number\n"
-                           "2.Volume of a Frustum\n"
-                           "3.Planck Constant\n"
-                           "4.Buoyancy\n"
-                           "5.The Big Four\n"
-                           "6.Decimal to Binary\n"
-                           "7.Hexadecimal to Decimal\n")
-        if answer < "8":
-            math_options = {
-                "1": BinetsFibonacciNumber,
-                "2": VolumeFrustum,
-                "3": PlanckConstant,
-                "4": Buoyancy,
-                "5": BigFour,
-                "6": DecimalBinary,
-                "7": HexadecimalDecimal
-            }
-            math_options[answer]()
-        else:
-            print("Please enter a value between 1 and 7.\n")
-            self.get_answer()
-
-
-def another_problem():
-    another = raw_input("Is there another problem you would like to solve?\nEnter 1 for Yes or 2 for No.\n")
-    if another == "1":
-        Main()
-    else:
-        exit()
-
-
 if __name__ == "__main__":
     Main()
-    
