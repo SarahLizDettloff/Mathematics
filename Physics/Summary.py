@@ -48,7 +48,7 @@ class BinetsFibonacciNumber(Main):
 
     def __init__(self):
         self.calculate_fib()
-        super(BinetsFibonacciNumber, self).__init__()
+        super(BinetsFibonacciNumber, self).another_problem(self)
 
     @staticmethod
     def calculate_fib():
@@ -75,7 +75,7 @@ class VolumeFrustum(Main):
 
     def __init__(self):
         self.get_volume()
-        super(VolumeFrustum, self).__init__()
+        super(VolumeFrustum, self).another_problem(self)
 
     @staticmethod
     def get_volume():
@@ -108,7 +108,7 @@ class PlanckConstant(Main):
 
     def __init__(self):
         self.which_planck()
-        super(PlanckConstant, self).__init__()
+        super(PlanckConstant, self).another_problem(self)
 
     @staticmethod
     def calculate_energy_of_light():
@@ -209,7 +209,7 @@ class Buoyancy(Main):
 
     def __init__(self):
         self.get_buoyancy()
-        super(Buoyancy, self).__init__()
+        super(Buoyancy, self).another_problem(self)
 
     def find_volume(self):
         shape = raw_input(
@@ -352,7 +352,7 @@ class BigFour(Main):
 
     def __init__(self):
         self.which_equation()
-        super(BigFour, self).__init__()
+        super(BigFour, self).another_problem(self)
 
     @staticmethod
     def displacement_with_acceleration():
@@ -433,7 +433,7 @@ class DecimalBinary(Main):
 
     def __init__(self):
         self.get_decimal()
-        super(DecimalBinary, self).__init__()
+        super(DecimalBinary, self).another_problem(self)
 
     def convert_to_binary(self, decimal):
         result = 0
@@ -459,8 +459,8 @@ class DecimalBinary(Main):
     def get_decimal(self):
         decimal = raw_input("What decimal do you want to convert to binary?\n")
         try:
-            decimal = int(decimal)
-            self.convert_to_binary(int(decimal))
+            decimal = int(round(float(decimal)))
+            self.convert_to_binary(float(decimal))
         except ValueError:
             print("Input must be a numeric value.")
             DecimalBinary()
@@ -492,7 +492,7 @@ class HexadecimalDecimal(Main):
 
     def __init__(self):
         self.get_hexadecimal()
-        super(HexadecimalDecimal, self).__init__()
+        super(HexadecimalDecimal, self).another_problem(self)
 
     @staticmethod
     def get_result(values):
