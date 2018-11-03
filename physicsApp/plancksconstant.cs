@@ -65,7 +65,7 @@ namespace Mathematics
                 }
                 catch
                 {
-                    MessageBox.Show("You did not enter all of the values. The empty variable will be assumed as null.");
+                    MessageBox.Show("You did not enter all of the values. The empty variable will be assumed as null.", "Planck's Constant");
                 }
                 finally
                 {
@@ -83,7 +83,7 @@ namespace Mathematics
                 }
                 catch
                 {
-                    MessageBox.Show("You did not enter all of the values. The empty variable will be assumed as null.");
+                    MessageBox.Show("You did not enter all of the values. The empty variable will be assumed as null.", "Planck's Constant");
                 }
                 finally
                 {
@@ -101,7 +101,7 @@ namespace Mathematics
                 }
                 catch
                 {
-                    MessageBox.Show("You did not enter all of the values. The empty variable will be assumed as null.");
+                    MessageBox.Show("You did not enter all of the values. The empty variable will be assumed as null.", "Planck's Constant");
                 }
                 finally
                 {
@@ -119,7 +119,7 @@ namespace Mathematics
                 }
                 catch
                 {
-                    MessageBox.Show("You did not enter all of the values. The empty variable will be assumed as null.");
+                    MessageBox.Show("You did not enter all of the values. The empty variable will be assumed as null.", "Planck's Constant");
                 }
                 finally
                 {
