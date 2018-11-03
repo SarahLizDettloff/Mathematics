@@ -314,6 +314,9 @@ namespace Mathematics
             rbSphere.TabStop = false;
 
             lblResult.Text = "";
+            txtVariable1.Clear();
+            txtVariable2.Clear();
+            txtVariables3.Clear();
 
             lb1.Hide();
             txtVariable1.Hide();
