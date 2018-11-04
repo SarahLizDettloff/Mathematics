@@ -59,6 +59,8 @@ namespace Mathematics
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+            main goBack = new main();
+            goBack.Show();
             this.Close();
         }
 
@@ -165,7 +167,7 @@ namespace Mathematics
                 finally
                 {
                     result = (initialVelocity * time + 0.5 * acceleration * time);
-                    lblResult.Text = result.ToString();
+                    lblResult.Text = result.ToString() + " m";
                 }
 
             }
@@ -180,7 +182,7 @@ namespace Mathematics
                 finally
                 {
                     result = (initialVelocity * (finalVelocity / 2)) * time;
-                    lblResult.Text = result.ToString();
+                    lblResult.Text = result.ToString() + " m";
                 }
 
             }
@@ -195,7 +197,7 @@ namespace Mathematics
                 finally
                 {
                     result = initialVelocity + time * acceleration;
-                    lblResult.Text = result.ToString();
+                    lblResult.Text = result.ToString() + " m";
                 }
             }
             else if (rbFinalVelocitySquared.Checked)
@@ -209,7 +211,7 @@ namespace Mathematics
                 finally
                 {
                     result = initialVelocity + (2 * acceleration * displacement);
-                    lblResult.Text = result.ToString();
+                    lblResult.Text = result.ToString() + " m";
                 }
             }
             else
