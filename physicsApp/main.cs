@@ -56,12 +56,5 @@ namespace Mathematics
         {
 
         }
-
-        private void btnAbout_Click(object sender, EventArgs e)
-        {
-            about about = new about();
-            about.Show();
-            this.Hide();
-        }
     }
 }
